@@ -1,0 +1,32 @@
+﻿@model System.DateTime
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    if (Model.Hour < 12)
+    {
+        ViewData["Header"] = "Good Morning!";
+    }
+    else if (Model.Hour < 18)
+    {
+        ViewData["Header"] = "Good Afternoon!";
+    }
+    else
+    {
+        ViewData["Header"] = "Good Evening!";
+    }
+}
+
+<h2>Index</h2>
+
+<div>
+    <h1>@ViewData["Header"]</h1>
+</div>
+
+<div>The time is @ViewData["Time"] on @ViewData["Date"]</div>
+<div>There are @ViewData["DaysLeft"] more days left in @ViewData["Year"]</div>
+
+<br />
+<a href="/Lab4/Page2" class="btn btn-primary">Go to Page 2</a>
